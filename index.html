@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyptian Burger Joint - Sabores do Antigo Egito</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-pyramid"></i>
+            <span>Egyptian Burger Joint</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#menu">Cardápio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#reviews">Avaliações</a></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="pyramid left"></div>
+        <div class="pyramid right"></div>
+        <div class="sphinx"></div>
+        <div class="hero-content">
+            <h1>Egyptian Burger Joint</h1>
+            <p class="tagline">Sabores ancestrais, experiência divina</p>
+            <p class="subtitle">Descubra o sabor dos deuses no coração do deserto</p>
+            <button class="cta-button" onclick="scrollToMenu()">
+                <i class="fas fa-utensils"></i> Ver Cardápio
+            </button>
+        </div>
+        <div class="sand-dunes"></div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2><i class="fas fa-scroll"></i> A Lenda</h2>
+                    <p>Em tempos antigos, os faraós desfrutavam dos melhores banquetes. Hoje, a <strong>Egyptian Burger Joint</strong> traz essa tradição milenar para o presente, combinando ingredientes nobres com a magia do Antigo Egito.</p>
+                    <p>Nossos hambúrgueres são preparados com especiarias secretas encontradas nas tumbas de Tutancâmon, nossos pães são abençoados por Anúbis, e cada mordida é uma viagem no tempo.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-crown"></i>
+                            <span>Ingredientes Nobres</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-fire"></i>
+                            <span>Preparo Ancestral</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Entrega Rápida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="pharaoh-burger"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2><i class="fas fa-ankh"></i> Cardápio Real</h2>
+            
+            <!-- Filtros -->
+            <div class="menu-filters">
+                <button class="filter-btn active" onclick="filterMenu('all')">Todos</button>
+                <button class="filter-btn" onclick="filterMenu('burger')">
+                    <i class="fas fa-hamburger"></i> Hambúrgueres
+                </button>
+                <button class="filter-btn" onclick="filterMenu('chicken')">
+                    <i class="fas fa-drumstick-bite"></i> Frangos
+                </button>
+                <button class="filter-btn" onclick="filterMenu('salad')">
+                    <i class="fas fa-leaf"></i> Saladas
+                </button>
+                <button class="filter-btn" onclick="filterMenu('drink')">
+                    <i class="fas fa-wine-bottle"></i> Bebidas
+                </button>
+                <button class="filter-btn" onclick="filterMenu('appetizer')">
+                    <i class="fas fa-cookie-bite"></i> Aperitivos
+                </button>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Avaliações dos Faraós</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"O hambúrguer do Faraó é simplesmente divino! Me senti na corte de Ramsés II. Entrega rápida e embalagem temática incrível!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">CT</div>
+                        <div>
+                            <strong>Cleópatra T.</strong>
+                            <span>⭐ Cliente Ouro</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"A Múmia Burguer é uma obra de arte! O pão macio e o queijo derretido... digno de um banquete no Vale dos Reis!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">TR</div>
+                        <div>
+                            <strong>Tutancâmon R.</strong>
+                            <span>👑 Faraó VIP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Os aperitivos são incríveis! Os Bastet Nuggets são crocantes e saborosos. Recomendo a todos os meus súditos!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">NA</div>
+                        <div>
+                            <strong>Nefertiti A.</strong>
+                            <span>💎 Rainha Diamante</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-pyramid"></i> Egyptian Burger Joint</h3>
+                    <p>Tradição milenar, sabor eterno.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Domingo</p>
+                    <p>11:00 - 23:00</p>
+                    <p>Delivery até 00:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (16) 99377-7701</p>
+                    <p><i class="fas fa-envelope"></i> contato@egyptianburger.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Egyptian Burger Joint. Todos os direitos reservados.</p>
+                <p class="ankh">☥</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrinho Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+                <button class="close-cart" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Itens do carrinho serão inseridos aqui -->
+            </div>
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-scroll"></i>
+                <p>Seu papiro está vazio...</p>
+            </div>
+            <div class="cart-footer" id="cartFooter">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price" id="totalPrice">R$ 0,00</span>
+                </div>
+                <button class="checkout-btn" onclick="openCheckout()">
+                    <i class="fas fa-credit-card"></i> Finalizar Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2><i class="fas fa-crown"></i> Finalizar Pedido</h2>
+                <button class="close-checkout" onclick="closeCheckout()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="checkout-form">
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Dados Pessoais</h3>
+                    <input type="text" id="customerName" placeholder="Nome completo" required>
+                    <input type="tel" id="customerPhone" placeholder="Telefone (WhatsApp)" required>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Endereço de Entrega</h3>
+                    <input type="text" id="customerAddress" placeholder="Rua, número" required>
+                    <input type="text" id="customerComplement" placeholder="Complemento (opcional)">
+                    <input type="text" id="customerNeighborhood" placeholder="Bairro" required>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-truck"></i> Frete</h3>
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="5" checked onchange="updateDelivery(5)">
+                            <span>Entrega Padrão - R$ 5,00 (40-50 min)</span>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="10" onchange="updateDelivery(10)">
+                            <span>Entrega Expressa - R$ 10,00 (20-30 min)</span>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="0" onchange="updateDelivery(0)">
+                            <span>Retirada no Local - Grátis</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-credit-card"></i> Forma de Pagamento</h3>
+                    <div class="payment-methods">
+                        <label class="payment-method">
+                            <input type="radio" name="payment" value="pix" checked>
+                            <i class="fas fa-qrcode"></i>
+                            <span>PIX</span>
+                            <small>Chave: 16993777701</small>
+                        </label>
+                        <label class="payment-method">
+                            <input type="radio" name="payment" value="credit">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Cartão de Crédito</span>
+                            <small>Na entrega</small>
+                        </label>
+                        <label class="payment-method">
+                            <input type="radio" name="payment" value="debit">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Cartão de Débito</span>
+                            <small>Na entrega</small>
+                        </label>
+                        <label class="payment-method">
+                            <input type="radio" name="payment" value="cash">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Dinheiro</span>
+                            <small>Troco para: <input type="text" id="changeFor" placeholder="R$ 0,00" style="width: 80px; display: inline;"></small>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="checkoutSubtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frete:</span>
+                        <span id="checkoutDelivery">R$ 5,00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="checkoutTotal">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <button class="place-order-btn" onclick="placeOrder()">
+                    <i class="fas fa-paper-plane"></i> Confirmar Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmação Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Pedido Confirmado!</h2>
+            <p>Seu pedido foi enviado para os deuses do delivery!</p>
+            <p class="order-number">Nº do Pedido: <span id="orderNumber">#0001</span></p>
+            <p class="pix-info" id="pixInfo" style="display: none;">
+                <strong>Chave PIX:</strong> 16993777701<br>
+                <small>Envie o comprovante pelo WhatsApp</small>
+            </p>
+            <button onclick="closeConfirmation()" class="close-confirm-btn">
+                <i class="fas fa-thumbs-up"></i> Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeAllModals()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
